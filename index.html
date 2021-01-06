@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Book2020</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!--1.empty element-->
+    <div id="root"></div>
+    
+    <!--react library-->
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js" ></script>
+    <!--React Dom-->
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" ></script>
+    <!--Babel-->
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+<script type="text/babel">
+
+//Nested Component
+function Booklist(){
+    return <section className='booklist'>
+            <Book/>
+            <Book/>
+            <Book/>
+            <Book/>
+            <Book/>
+            <Book/>
+            <Book/>
+            
+           </section>
+           
+}
+ 
+const Book = () =>{
+  return <article>
+         <Image></Image>
+         <Title/>
+         <Author/>
+         <Review/>
+         <Rating/>
+       </article>;
+};
+
+const Image =() =>(
+    <img src="https://images-na.ssl-images-amazon.com/images/I/81Zj4ibm%2BhL._AC_UL200_SR200,200_.jpg"/>
+);
+
+const Title = () => <h1>How to Catch a Mermaid</h1>
+
+const Author=() => <h5>Adam Wallace</h5>
+const Review =()=> <h5>Review: This book has been widely accepted by kids
+     and their parents.
+     <p>It amuses kids with descriptive colorful pictures and 
+        captivating story. </p>
+     </h5>
+const Rating =()=><h5>Rating: 4.5 </h5>
+
+ReactDOM.render(<Booklist/>, document.getElementById('root'));
+
+
+
+</script>
+</body>
+</html>
